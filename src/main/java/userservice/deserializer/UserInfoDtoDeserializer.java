@@ -3,11 +3,7 @@ package userservice.deserializer;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.kafka.common.serialization.Deserializer;
-import userservice.Entities.UserInfoDTO;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Map;
+import userservice.DTOs.UserInfoDTO;
 
 public class UserInfoDtoDeserializer implements Deserializer<UserInfoDTO> {
 

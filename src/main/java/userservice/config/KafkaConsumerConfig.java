@@ -8,7 +8,7 @@ import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
-import userservice.Entities.UserInfoDTO;
+import userservice.DTOs.UserInfoDTO;
 
 import java.util.HashMap;
 import java.util.Map;
