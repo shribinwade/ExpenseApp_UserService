@@ -38,10 +38,6 @@ dependencies {
 	// ✅ PostgreSQL (replaces MySQL)
 	runtimeOnly 'org.postgresql:postgresql'
 
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
 }
 
-tasks.named('test') {
-	useJUnitPlatform()
-}
+
