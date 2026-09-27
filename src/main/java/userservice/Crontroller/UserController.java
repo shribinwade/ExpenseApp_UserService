@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import userservice.DTOs.UserInfoDTO;
 import userservice.services.UserService;
-
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/user/v1")
 public class UserController {
@@ -27,13 +27,18 @@ public class UserController {
     }
 
     @GetMapping("/getUser")
-    public ResponseEntity<UserInfoDTO> getUser(UserInfoDTO userInfoDTO){
+    public ResponseEntity<UserInfoDTO> getUser(@RequestBody UserInfoDTO userInfoDTO){
         try{
           UserInfoDTO user = userService.getUser(userInfoDTO);
           return new ResponseEntity<>(user,HttpStatus.OK);
         }catch (Exception ex){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+
+    @GetMapping("/health")
+    public ResponseEntity<Boolean> checkHealth(){
+        return new ResponseEntity<>(true,HttpStatus.OK);
     }
 
 }
